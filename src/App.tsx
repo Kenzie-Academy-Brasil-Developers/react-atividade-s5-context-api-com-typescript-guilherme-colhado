@@ -16,7 +16,6 @@ function App() {
         {products.map(product=><CardComponent 
         key={product.idProducts} 
         title={product.title} 
-        idProducts={product.idProducts} 
         add={addToCart} 
         remove={removeToCart}
         image={product.image} 
@@ -24,19 +23,25 @@ function App() {
         product={product}
         />)}
       </CardsContainer>
-      <CardsContainer>
-        {carts.map(product=><CardComponent 
-        key={product.idProducts} 
-        title={product.title} 
-        idProducts={product.idProducts} 
-        add={addToCart} 
-        remove={removeToCart}
-        image={product.image} 
-        price={product.price}
-        product={product}
-        idCart={product.idCart}
-        />)}
-      </CardsContainer>
+      
+      {carts.length && <>
+        <Header>
+          <h1>Carrinhos</h1>
+        </Header>
+        <CardsContainer>
+          {carts.map(product=><CardComponent 
+          key={product.idProducts} 
+          title={product.title} 
+          add={addToCart} 
+          remove={removeToCart}
+          image={product.image} 
+          price={product.price}
+          product={product}
+          idCart={product.idCart}
+          cart={product.cart}
+          />)}
+        </CardsContainer>
+      </>}
     </main>
   );
 }

@@ -52,5 +52,5 @@ export const ProductsProvider = ({children} : ProductsProviderProps) => {
             image: "https://images-americanas.b2w.io/produtos/01/00/img/1614132/3/1614132374_1GG.jpg",
         },
     ])
-    return <ProductsContext.Provider value={{products, setProducts}}></ProductsContext.Provider>
+    return <ProductsContext.Provider value={{products, setProducts}}>{children}</ProductsContext.Provider>
 }

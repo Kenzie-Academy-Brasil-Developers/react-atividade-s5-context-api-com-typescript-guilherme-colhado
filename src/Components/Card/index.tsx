@@ -11,26 +11,28 @@ interface Products {
 
 interface CardComponentProps {
     idCart?: number
-    idProducts: number
     title: string
     price: number
     image: string    
-    remove: (id: number) => void
+    remove: (id?: number) => void
     add: (product: Products) => void
     product: Products
+    cart?: boolean
 }
 
-export const CardComponent = ({idCart, idProducts, title, price, image, remove, add, product}: CardComponentProps) => {
+export const CardComponent = ({idCart, title, cart, price, image, remove, add, product}: CardComponentProps) => {
     return <Card>
-        <figure>
-            <img src={image} alt={title} />
-        </figure>
         <div>
-            <h2>{title}</h2>
-            <h3>{price}</h3>
+            <figure>
+                <img src={image} alt={title} />
+            </figure>
+            <div>
+                <h2>{title}</h2>
+                <h3>{price}</h3>
+            </div>
         </div>
-        <ButtonComponent cart={!!idCart} onClick={()=>idCart ? remove(idCart) : add(product)}>
-            {idCart ? 'Remover do carrinho' : 'Adicionar ao carrinho' }
+        <ButtonComponent cart={cart} onClick={()=>cart ? remove(idCart) : add(product)}>
+            {cart ? 'Remover do carrinho' : 'Adicionar ao carrinho' }
         </ButtonComponent>
     </Card>
 }

@@ -6,4 +6,4 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
     cart?: boolean
 }
 
-export const ButtonComponent = ({children, cart, ...rest}: ButtonProps) => <Button cart={cart}  {...rest}>{children}</Button>
+export const ButtonComponent = ({children, cart, ...rest}: ButtonProps) => <Button cart={cart} {...rest}>{children}</Button>

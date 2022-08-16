@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const Header = styled.header`
     display: flex;
-    padding: 5px 0;
-    margin-bottom: 30px;
-    background-color: red;
-    height: 100vh;
+    padding: 10px 0;
+    width: 100%;
     h1{
-        font-size: 2.5rem;
+        text-align: center;
+        font-size: 4rem;
+        width: 100%;
     }
 `

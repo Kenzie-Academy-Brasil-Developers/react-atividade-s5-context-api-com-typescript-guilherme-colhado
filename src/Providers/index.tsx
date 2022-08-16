@@ -7,9 +7,11 @@ interface ProvidersProps {
 }
 
 export const Providers = ({children}: ProvidersProps) => {
-    return <ProductsProvider>
-        <CartProviders>
+    return (
+    <ProductsProvider>
+        <CartProviders> 
             {children}
         </CartProviders>
     </ProductsProvider>
+    )
 }
